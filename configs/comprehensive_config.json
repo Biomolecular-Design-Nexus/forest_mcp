@@ -1,0 +1,54 @@
+{
+  "_description": "Configuration for comprehensive FOREST workflow",
+  "_source": "Extracted from examples/use_case_5_comprehensive_workflow.py",
+
+  "max_length": 134,
+  "num_barcodes": 2,
+  "barcode_prefix": "GGG",
+  "stem_length": 17,
+  "t7_promoter": "GCGCTAATACGACTCACTATA",
+  "output_format": "fasta",
+  "include_metadata": true,
+
+  "workflow": {
+    "steps": [
+      "motif_extraction",
+      "library_design",
+      "template_design",
+      "microarray_design"
+    ],
+    "save_intermediate": true
+  },
+
+  "motifs": {
+    "max_length": 134,
+    "extract_single": true,
+    "extract_multi": true
+  },
+
+  "library": {
+    "barcodes_per_motif": 2,
+    "barcode_prefix": "GGG",
+    "stem_length": 17
+  },
+
+  "templates": {
+    "t7_promoter": "GCGCTAATACGACTCACTATA",
+    "reverse_complement": true
+  },
+
+  "array": {
+    "capture_barcodes": true,
+    "reverse_complement": true
+  },
+
+  "output": {
+    "save_all_steps": true,
+    "file_names": {
+      "motifs": "motifs.txt",
+      "library": "rna_library.txt",
+      "templates": "dna_templates.txt",
+      "array": "microarray_barcodes.txt"
+    }
+  }
+}

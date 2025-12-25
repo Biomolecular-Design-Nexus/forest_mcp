@@ -1,0 +1,20 @@
+{
+  "_description": "Configuration for terminal motif extraction",
+  "_source": "Extracted from examples/use_case_1_motif_extraction.py",
+
+  "max_length": 134,
+  "output_format": "fasta",
+  "include_metadata": true,
+
+  "algorithm": {
+    "extract_single_terminal": true,
+    "extract_multi_terminal": true,
+    "max_complexity_levels": 50
+  },
+
+  "output": {
+    "format": "fasta",
+    "include_structures": true,
+    "include_sequences": true
+  }
+}

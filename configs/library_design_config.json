@@ -1,0 +1,28 @@
+{
+  "_description": "Configuration for RNA structure library design",
+  "_source": "Extracted from examples/use_case_2_library_design.py",
+
+  "max_length": 134,
+  "num_barcodes": 5,
+  "barcode_prefix": "GGG",
+  "stem_length": 17,
+  "output_format": "fasta",
+  "include_metadata": true,
+
+  "barcodes": {
+    "prefix": "GGG",
+    "per_motif": 5
+  },
+
+  "conjugation": {
+    "forward_stem": "GTGTACGAAGTTTCAGC",
+    "reverse_stem": "GCTGAAGCTTCGTGCAC",
+    "stem_length": 17
+  },
+
+  "output": {
+    "format": "fasta",
+    "rna_notation": true,
+    "uppercase": true
+  }
+}

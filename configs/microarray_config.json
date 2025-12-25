@@ -1,0 +1,26 @@
+{
+  "_description": "Configuration for DNA barcode microarray design",
+  "_source": "Extracted from examples/use_case_4_microarray_design.py",
+
+  "max_length": 134,
+  "num_barcodes": 2,
+  "barcode_prefix": "GGG",
+  "output_format": "fasta",
+  "include_metadata": true,
+
+  "array": {
+    "capture_type": "reverse_complement",
+    "target_prefix": "GGG"
+  },
+
+  "barcodes": {
+    "prefix": "GGG",
+    "per_motif": 2
+  },
+
+  "output": {
+    "format": "fasta",
+    "naming_suffix": "_array",
+    "dna_notation": true
+  }
+}

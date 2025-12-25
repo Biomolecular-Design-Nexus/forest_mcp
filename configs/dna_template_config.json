@@ -1,0 +1,29 @@
+{
+  "_description": "Configuration for DNA template pool design",
+  "_source": "Extracted from examples/use_case_3_dna_template_design.py",
+
+  "max_length": 134,
+  "num_barcodes": 3,
+  "barcode_prefix": "GGG",
+  "stem_length": 17,
+  "t7_promoter": "GCGCTAATACGACTCACTATA",
+  "output_format": "fasta",
+  "include_metadata": true,
+
+  "template": {
+    "t7_promoter": "GCGCTAATACGACTCACTATA",
+    "include_reverse_complement": true,
+    "dna_notation": true
+  },
+
+  "barcodes": {
+    "prefix": "GGG",
+    "per_motif": 3
+  },
+
+  "output": {
+    "format": "fasta",
+    "naming_suffix": "_template",
+    "dna_notation": true
+  }
+}

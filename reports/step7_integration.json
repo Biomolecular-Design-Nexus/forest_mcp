@@ -1,0 +1,118 @@
+{
+  "test_date": "2025-12-24T16:47:18.140024",
+  "server_path": "src/server.py",
+  "project_root": ".",
+  "tests": {
+    "server_startup": {
+      "status": "passed",
+      "timestamp": "2025-12-24T16:47:19.316980",
+      "output": "OK\n",
+      "error": ""
+    },
+    "tool_listing": {
+      "status": "passed",
+      "timestamp": "2025-12-24T16:47:20.440190",
+      "tool_count": 19,
+      "tools": [
+        "get_job_status",
+        "get_job_result",
+        "get_job_log",
+        "cancel_job",
+        "list_jobs",
+        "extract_rna_motifs",
+        "design_rna_library",
+        "design_dna_templates",
+        "design_microarray_barcodes",
+        "run_forest_workflow",
+        "submit_motif_extraction",
+        "submit_library_design",
+        "submit_template_design",
+        "submit_microarray_design",
+        "submit_comprehensive_workflow",
+        "submit_batch_motif_extraction",
+        "submit_batch_forest_workflow",
+        "validate_input_format",
+        "get_example_data"
+      ]
+    },
+    "example_data_availability": {
+      "status": "passed",
+      "timestamp": "2025-12-24T16:47:20.440509",
+      "available_files": [
+        {
+          "name": "test.fa.txt",
+          "path": "examples/data/test.fa.txt",
+          "size": 739
+        },
+        {
+          "name": "test_100.fa.txt",
+          "path": "examples/data/test_100.fa.txt",
+          "size": 2021091
+        },
+        {
+          "name": "barcode25mer_100000.txt",
+          "path": "examples/data/barcode25mer_100000.txt",
+          "size": 4088895
+        }
+      ]
+    },
+    "sync_tool_get_example_data": {
+      "status": "failed",
+      "timestamp": "2025-12-24T16:47:21.587118",
+      "error": "'FunctionTool' object is not callable",
+      "params": {}
+    },
+    "sync_tool_validate_input_format": {
+      "status": "failed",
+      "timestamp": "2025-12-24T16:47:22.768603",
+      "error": "'FunctionTool' object is not callable",
+      "params": {
+        "input_file": "examples/data/test.fa.txt",
+        "format_type": "fasta_structure"
+      }
+    },
+    "sync_tool_extract_rna_motifs": {
+      "status": "failed",
+      "timestamp": "2025-12-24T16:47:23.994881",
+      "error": "'FunctionTool' object is not callable",
+      "params": {
+        "input_file": "examples/data/test.fa.txt",
+        "max_length": 134
+      }
+    },
+    "sync_tool_design_rna_library": {
+      "status": "failed",
+      "timestamp": "2025-12-24T16:47:25.206690",
+      "error": "'FunctionTool' object is not callable",
+      "params": {
+        "input_file": "examples/data/test.fa.txt",
+        "barcodes_file": "examples/data/barcode25mer_100000.txt",
+        "num_barcodes": 2
+      }
+    },
+    "error_handling_extract_rna_motifs": {
+      "status": "passed",
+      "timestamp": "2025-12-24T16:47:26.640707",
+      "params": {
+        "input_file": "/nonexistent/file.fa"
+      }
+    },
+    "error_handling_design_rna_library": {
+      "status": "passed",
+      "timestamp": "2025-12-24T16:47:27.816774",
+      "params": {
+        "input_file": "examples/data/test.fa.txt",
+        "barcodes_file": "/nonexistent/barcodes.txt"
+      }
+    }
+  },
+  "issues": [],
+  "summary": {
+    "total_tests": 9,
+    "passed": 5,
+    "failed": 4,
+    "errors": 0,
+    "pass_rate": "55.6%",
+    "ready_for_production": false
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "project_name": "FOREST2020",
+  "description": "RNA secondary structure analysis and probe design toolkit for functional RNA element identification",
+  "tools": [
+    {
+      "name": "extract_rna_motifs",
+      "type": "sync",
+      "description": "Extract terminal motifs from RNA structures",
+      "example_prompt": "Use extract_rna_motifs with input file @examples/data/test.fa.txt"
+    },
+    {
+      "name": "design_rna_library",
+      "type": "sync",
+      "description": "Design RNA probe library with barcodes",
+      "example_prompt": "Run design_rna_library on @examples/data/test.fa.txt using barcodes @examples/data/barcode25mer_100000.txt"
+    },
+    {
+      "name": "design_dna_templates",
+      "type": "sync",
+      "description": "Generate DNA templates with T7 promoter",
+      "example_prompt": "Use design_dna_templates with input @examples/data/test.fa.txt and barcodes @examples/data/barcode25mer_100000.txt"
+    },
+    {
+      "name": "design_microarray_barcodes",
+      "type": "sync",
+      "description": "Design microarray capture barcodes",
+      "example_prompt": "Run design_microarray_barcodes on @examples/data/test.fa.txt with barcodes @examples/data/barcode25mer_100000.txt"
+    },
+    {
+      "name": "run_forest_workflow",
+      "type": "sync",
+      "description": "Complete FOREST pipeline (all 4 steps)",
+      "example_prompt": "Use run_forest_workflow with input @examples/data/test.fa.txt, barcodes @examples/data/barcode25mer_100000.txt, output directory results/workflow/"
+    },
+    {
+      "name": "submit_motif_extraction",
+      "type": "submit",
+      "description": "Background motif extraction for large datasets",
+      "example_prompt": "Submit motif_extraction for @examples/data/test_100.fa.txt"
+    },
+    {
+      "name": "submit_library_design",
+      "type": "submit",
+      "description": "Background library design for large datasets",
+      "example_prompt": "Submit library_design for @examples/data/test_100.fa.txt with barcodes @examples/data/barcode25mer_100000.txt"
+    },
+    {
+      "name": "submit_template_design",
+      "type": "submit",
+      "description": "Background template design for large datasets",
+      "example_prompt": "Submit template_design for large dataset with job name 'production_templates'"
+    },
+    {
+      "name": "submit_microarray_design",
+      "type": "submit",
+      "description": "Background microarray design for large datasets",
+      "example_prompt": "Submit microarray_design for batch processing"
+    },
+    {
+      "name": "submit_comprehensive_workflow",
+      "type": "submit",
+      "description": "Background complete workflow for large datasets",
+      "example_prompt": "Submit comprehensive_workflow for @examples/data/test_100.fa.txt then check job status"
+    },
+    {
+      "name": "submit_batch_motif_extraction",
+      "type": "submit",
+      "description": "Process multiple FASTA files in batch",
+      "example_prompt": "Submit batch_motif_extraction for multiple files"
+    },
+    {
+      "name": "submit_batch_forest_workflow",
+      "type": "submit",
+      "description": "Run workflow on multiple files in batch",
+      "example_prompt": "Process multiple datasets with submit_batch_forest_workflow"
+    },
+    {
+      "name": "get_job_status",
+      "type": "utility",
+      "description": "Check job progress and status",
+      "example_prompt": "Check job status for job ID abc123"
+    },
+    {
+      "name": "get_job_result",
+      "type": "utility",
+      "description": "Get results when job completed",
+      "example_prompt": "Get job result for completed job"
+    },
+    {
+      "name": "get_job_log",
+      "type": "utility",
+      "description": "View execution logs",
+      "example_prompt": "Show job logs for troubleshooting"
+    },
+    {
+      "name": "cancel_job",
+      "type": "utility",
+      "description": "Cancel running job",
+      "example_prompt": "Cancel job ID xyz789"
+    },
+    {
+      "name": "list_jobs",
+      "type": "utility",
+      "description": "List all jobs with optional status filter",
+      "example_prompt": "List all running jobs"
+    },
+    {
+      "name": "validate_input_format",
+      "type": "utility",
+      "description": "Validate FASTA/barcode file formats",
+      "example_prompt": "Validate input format for @examples/data/test.fa.txt"
+    },
+    {
+      "name": "get_example_data",
+      "type": "utility",
+      "description": "List available example datasets",
+      "example_prompt": "What example data is available for testing?"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "motif_extraction.py",
+      "description": "Extract terminal motifs from RNA structures",
+      "example_command": "python scripts/motif_extraction.py --input examples/data/test.fa.txt --output results/motifs.txt"
+    },
+    {
+      "name": "library_design.py",
+      "description": "Design RNA probe library with barcodes",
+      "example_command": "python scripts/library_design.py --input examples/data/test.fa.txt --barcodes examples/data/barcode25mer_100000.txt --num_barcodes 5"
+    },
+    {
+      "name": "dna_template_design.py",
+      "description": "Generate DNA templates with T7 promoter",
+      "example_command": "python scripts/dna_template_design.py --input examples/data/test.fa.txt --barcodes examples/data/barcode25mer_100000.txt --num_barcodes 3"
+    },
+    {
+      "name": "microarray_design.py",
+      "description": "Design microarray capture barcodes",
+      "example_command": "python scripts/microarray_design.py --input examples/data/test.fa.txt --barcodes examples/data/barcode25mer_100000.txt --num_barcodes 2"
+    },
+    {
+      "name": "comprehensive_workflow.py",
+      "description": "Complete FOREST workflow (all steps)",
+      "example_command": "python scripts/comprehensive_workflow.py --input examples/data/test.fa.txt --barcodes examples/data/barcode25mer_100000.txt --output_dir results/complete/ --num_barcodes 2"
+    }
+  ],
+  "demo_data": [
+    {
+      "file": "test.fa.txt",
+      "description": "Small test dataset (2 sequences) for quick testing",
+      "used_by": ["All tools", "motif_extraction", "library_design"]
+    },
+    {
+      "file": "test_100.fa.txt",
+      "description": "Larger dataset (100 sequences) for performance testing",
+      "used_by": ["Submit tools", "batch processing"]
+    },
+    {
+      "file": "barcode25mer_100000.txt",
+      "description": "100,000 DNA barcodes for library design",
+      "used_by": ["library_design", "dna_template_design", "microarray_design", "comprehensive_workflow"]
+    }
+  ],
+  "configs": [
+    {
+      "file": "motif_extraction_config.json",
+      "description": "Motif extraction settings",
+      "parameters": {"max_length": 134, "output_format": "fasta", "include_metadata": true}
+    },
+    {
+      "file": "library_design_config.json",
+      "description": "Library design parameters",
+      "parameters": {"num_barcodes": 5, "barcode_prefix": "GGG", "stem_length": 17}
+    },
+    {
+      "file": "dna_template_config.json",
+      "description": "Template generation settings",
+      "parameters": {"num_barcodes": 3, "t7_promoter": "GCGCTAATACGACTCACTATA"}
+    },
+    {
+      "file": "microarray_config.json",
+      "description": "Microarray design parameters",
+      "parameters": {"num_barcodes": 2, "barcode_prefix": "GGG"}
+    },
+    {
+      "file": "comprehensive_config.json",
+      "description": "Workflow configuration",
+      "parameters": {"steps": ["motif_extraction", "library_design", "template_design", "microarray_design"]}
+    }
+  ]
+}
